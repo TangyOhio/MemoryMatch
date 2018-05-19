@@ -1,6 +1,8 @@
 $(document).ready(  function() {
 
-  $('#').on('click', function() {
-
+  // When a button is clicked 
+  $('.buttons').on('click', function() {
+    pick = event.target.id
+    alert(pick)
   })
 })
