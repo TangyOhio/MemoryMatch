@@ -1,0 +1,10 @@
+#wrapper {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.buttons button {
+  min-width: 50px;
+  min-height: 50px;
+}
