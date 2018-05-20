@@ -6,30 +6,31 @@ $(document).ready(  function() {
 
   // When a button is clicked 
   $('.buttons').on('click', function() {
-    // Attempt counter
-    actions++
-    $('#counter').text('Attempts: ' + actions)
 
     // Grabs the button and its' value
     pick = '#' + event.target.id
-    pickColor = "" + $(pick).prop('value')
 
     pickTile(pick)
-    
-    //$(pick).prop('style', 'color:' + pickColor)
   })
 
   // What happens when a tile is picked
   function pickTile(tile) {
     tilesPicked++
+
+    // Attempt counter
+    actions++
+    $('#counter').text('Attempts: ' + actions)
     
     if (tilesPicked < 2) {
-      $(pick).prop('disabled', true)
+      $(tile).prop('disabled', true)
+      $(tile).addClass($(tile).prop("value"))
+      
       pick1 = tile
     }
     else {
       tilesPicked = 0
-      $(pick1).prop('disabled', false)
+      $(tile).addClass($(tile).prop("value"))
+      $(tile).prop('disabled', true)
       
       checkTiles(pick1, tile)
     }
@@ -37,11 +38,25 @@ $(document).ready(  function() {
 
   // Check if two tiles match
   function checkTiles(tile1, tile2) {
-    if ($(tile1).isEqualNode($(tile2))) {
-      output.log('yay')
+    var tile1Value = $(tile1).prop("value");
+    var tile2Value = $(tile2).prop("value");
+
+    if (tile1Value === tile2Value) {
+      console.log('yay')
     }
     else {
-      output.log('nay')
+      $(tile1).prop('disabled', false)
+      $(tile2).prop('disabled', false)
+      setTimeout(function() {
+        $(tile1).delay( 300 ).removeClass()
+      }, 300)
+
+      setTimeout(function() {
+        $(tile2).delay( 300 ).removeClass()
+      }, 300)
+      
+      
+      console.log('nay')
     }
   }
 
