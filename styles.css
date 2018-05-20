@@ -1,3 +1,7 @@
+body {
+  background-color: blanchedalmond;
+}
+
 #wrapper {
   width: 100%;
   overflow: hidden;
@@ -6,6 +10,10 @@
 
 .buttons {
   display: inline-block;
+  margin: 10px;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 .buttons button {
   min-width: 50px;
@@ -14,6 +22,7 @@
   outline: none;
 }
 
+/* The buttons change classes, changing color */
 .red {
   background-color: red;
 }
