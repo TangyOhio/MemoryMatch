@@ -60,5 +60,21 @@ $(document).ready(  function() {
     }
   }
 
+  // Start a new game
+  $('#new').on('click', function() {
+
+    actions = 0
+    $('#counter').text('Attempts: ' + actions)
+
+    tilesPicked = 0
+
+    // Remove classes from all buttons and make them enabled
+    $( "button[type*='button']" ).each( function(index, entry) {
+      $(entry).removeClass()
+      $(entry).prop('disabled', false)
+      
+      })
+  })
+
 
 })

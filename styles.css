@@ -8,27 +8,55 @@ body {
   text-align: center;
 }
 
+/* It's ugly but it works */
 .buttons {
   display: inline-block;
   margin: 10px;
   padding: 15px;
   border: 2px solid black;
   border-radius: 4px;
+  font-size: 0;
 }
 .buttons button {
   min-width: 50px;
   min-height: 50px;
-  font-size: 15px;
   outline: none;
+  border: 1px solid black;
+  border-right: none;
+}
+.buttons button:last-child {
+  border-right: 1px solid black;
+}
+.bottom_row button{
+  border-top: none;
 }
 
 /* The buttons change classes, changing color */
 .red {
-  background-color: red;
+  background-color: lightcoral;
 }
-.green {
-  background-color: green;
+.purple {
+  background-color: orchid;
 }
 .blue {
-  background-color: blue;
+  background-color: steelblue;
+}
+
+/* I want my new game button to be pretty */
+#new {
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bolder;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 10px;
+}
+#new:active {
+  transform: translateY(4px);
 }
